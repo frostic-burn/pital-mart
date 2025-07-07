@@ -88,30 +88,30 @@ export function Header() {
         className="bg-[#ECE8DF] text-gray-800 sticky top-0 z-50 border-b border-gray-300/70"
         onMouseLeave={() => setIsMegaMenuOpen(false)}
       >
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between relative">
+        <div className="container mx-auto px-4 h-32 flex items-center justify-between relative">
           {/* Left Side: Mobile Menu Toggle / Desktop Shop Button */}
           <div className="flex items-center lg:w-1/3">
             {/* Mobile hamburger menu */}
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(true)}>
-              <Menu className="w-6 h-6 text-red-700" />
+              <Menu className="w-8 h-8 text-red-700" />
             </Button>
 
             {/* Desktop Shop Button */}
             <Button
               variant="ghost"
-              className="hidden md:flex items-center space-x-2 text-red-700 hover:text-red-800 hover:bg-red-50 px-3 py-2 text-base"
+              className="hidden md:flex items-center space-x-3 text-red-700 hover:text-red-800 hover:bg-red-50 px-4 py-3 text-lg"
               onMouseEnter={() => setIsMegaMenuOpen(true)}
             >
-              <Menu className="rounded-lg h-7 w-7 py-0 my-0 mx-px px-0" />
-              <span className="font-extrabold leading-9 text-right text-2xl">Shop</span>
+              <Menu className="rounded-lg h-9 w-9 py-0 my-0 mx-px px-0" />
+              <span className="font-extrabold leading-9 text-right text-3xl">Shop</span>
             </Button>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center space-x-6 ml-8">
-              <Link href="/category" className="text-red-700 hover:text-red-800 font-medium">
+            <div className="hidden lg:flex items-center space-x-8 ml-10">
+              <Link href="/category" className="text-red-700 hover:text-red-800 font-medium text-lg">
                 Categories
               </Link>
-              <Link href="/products" className="text-red-700 hover:text-red-800 font-medium">
+              <Link href="/products" className="text-red-700 hover:text-red-800 font-medium text-lg">
                 Products
               </Link>
             </div>
@@ -121,14 +121,14 @@ export function Header() {
           <div className="flex-1 flex justify-center">
             <Link href="/" className="text-center">
               <div className="flex flex-col items-center">
-                <img src="https://i.ibb.co/vvPM0njt/Vector-1.png" alt="Logo Symbol" className="w-8 h-5 mb-1" />
-                <h1 className="text-2xl font-lancelot text-[#a22020]">PITAL MART</h1>
+                <img src="https://i.ibb.co/vvPM0njt/Vector-1.png" alt="Logo Symbol" className="w-16 h-10 mb-2" />
+                <h1 className="text-5xl font-lancelot text-[#a22020] leading-tight">PITAL MART</h1>
               </div>
             </Link>
           </div>
 
           {/* Right Side: Icons */}
-          <div className="flex items-center justify-end space-x-4 lg:w-1/3 flex-row font-extrabold">
+          <div className="flex items-center justify-end space-x-6 lg:w-1/3 flex-row font-extrabold">
             <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
               <DialogTrigger asChild>
                 <Button variant="ghost" size="icon" className="p-0">
@@ -328,16 +328,16 @@ export function Header() {
             </nav>
             <div className="flex items-center justify-around p-4 border-t border-gray-300/70">
               <Button variant="ghost" size="icon" onClick={() => { setIsSearchOpen(true); setIsMobileMenuOpen(false); }}>
-                <Search className="w-7 h-7 text-red-700" />
+                <Search className="w-6 h-6 text-red-700" />
               </Button>
               <Link href="/profile" onClick={closeAllMenus}>
-                <User className="w-7 h-7 text-red-700" />
+                <User className="w-6 h-6 text-red-700" />
               </Link>
               <Link href="/wishlist" onClick={closeAllMenus}>
-                <Heart className="w-7 h-7 text-red-700" />
+                <Heart className="w-6 h-6 text-red-700" />
               </Link>
               <Link href="/cart" onClick={closeAllMenus} className="relative">
-                <ShoppingCart className="w-7 h-7 text-red-700" />
+                <ShoppingCart className="w-6 h-6 text-red-700" />
                 {totalItems > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
                     {totalItems > 99 ? '99+' : totalItems}

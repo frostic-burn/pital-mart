@@ -5,9 +5,9 @@ import { CartProvider } from "@/contexts/cart-context"
 import { AuthProvider } from "@/contexts/auth-context"
 import { Toaster } from "@/components/ui/toaster"
 import Script from "next/script"
-import { Header } from "@/components/layout/header" // ✅ Correct path
-import { Footer } from "@/components/layout/footer" // ✅ Correct path
-import { ToastContainer } from 'react-toastify';
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { ToastContainer } from "react-toastify"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -103,22 +103,22 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#ECE8DF] text-gray-800`}>
         <AuthProvider>
           <CartProvider>
-          <ToastContainer 
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-            <Header /> {/* 👑 Now visible */}
-            <main className="min-h-screen">{children}</main>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+            <Header />
+            <main className="min-h-screen bg-[#ECE8DF]">{children}</main>
             <Footer />
             <Toaster />
           </CartProvider>
